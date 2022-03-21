@@ -4,5 +4,6 @@
 # PyCharm
 .idea
 
-# Python Virtual Env
+# Python
 venv
+__pycache__
