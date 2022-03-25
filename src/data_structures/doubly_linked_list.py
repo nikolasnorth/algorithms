@@ -76,12 +76,7 @@ class DoublyLinkedList:
         :param i: Index
         :return: Data stored at position `i`
         """
-        if i < 0 or i >= len(self):
-            raise IndexError
-        node = self._head
-        for i in range(i):
-            node = node.next()
-        return node.data()
+        return self._node_at(i).data()
 
     def __setitem__(self, i: int, data):
         """
@@ -90,7 +85,7 @@ class DoublyLinkedList:
         :param data: Data
         :return: None
         """
-        pass
+        self._node_at(i).set_data(data)
 
     def __delitem__(self, i: int):
         """
@@ -98,3 +93,17 @@ class DoublyLinkedList:
         :param i: Index
         :return: None
         """
+        pass
+
+    def _node_at(self, i: int):
+        """
+        Returns the node at the i-th position.
+        :param i: Index
+        :return: Node at position `i`
+        """
+        if i < 0 or i >= len(self):
+            raise IndexError
+        node = self._head
+        for i in range(i):
+            node = node.next()
+        return node
