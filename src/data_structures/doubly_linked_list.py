@@ -53,7 +53,6 @@ class DoublyLinkedList:
         if len(self) == 0:
             self._head = node
             self._tail = node
-            self._size += 1
         else:
             self._tail.set_next(node)
             node.set_prev(self._tail)

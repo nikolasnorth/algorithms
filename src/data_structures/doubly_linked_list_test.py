@@ -12,6 +12,7 @@ class TestDoublyLinkedList(unittest.TestCase):
         # Check values were inserted in the correct order
         for i in range(len(items)):
             self.assertEqual(dll[i], items[i], f"incorrect value found at position {i}")
+        self.assertEqual(len(dll), len(items))
 
 
 if __name__ == '__main__':
